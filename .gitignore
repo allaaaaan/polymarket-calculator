@@ -1,0 +1,12 @@
+# Node.js-related files (if you expand later)
+node_modules/
+dist/
+
+# Mac system files
+.DS_Store
+
+# Log files
+*.log
+
+# Temp files
+*.tmp

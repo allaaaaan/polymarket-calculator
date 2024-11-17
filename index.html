@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polymarket Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <h1 class="text-2xl font-bold mb-4 text-gray-700 text-center">Polymarket Calculator</h1>
+        <p class="text-gray-600 mb-2 text-center">Enter a value below:</p>
+        <input 
+            type="number" 
+            id="inputField" 
+            class="border border-gray-300 rounded w-full py-2 px-3 mb-4 focus:outline-none focus:ring focus:border-blue-300" 
+            placeholder="Enter a value" 
+        />
+        <button 
+            onclick="calculate()" 
+            class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded w-full"
+        >
+            Calculate
+        </button>
+        <div id="result" class="mt-4 text-center text-green-500 text-lg font-semibold">Result:</div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
