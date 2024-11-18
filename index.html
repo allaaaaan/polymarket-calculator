@@ -3,27 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Polymarket Calculator</title>
+    <title>Polymarket Profit Calculator</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 min-h-screen flex items-center justify-center">
-    <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-        <h1 class="text-2xl font-bold mb-4 text-gray-700 text-center">Polymarket Calculator</h1>
-        <p class="text-gray-600 mb-2 text-center">Enter a value below:</p>
-        <input 
-            type="number" 
-            id="inputField" 
-            class="border border-gray-300 rounded w-full py-2 px-3 mb-4 focus:outline-none focus:ring focus:border-blue-300" 
-            placeholder="Enter a value" 
-        />
-        <button 
-            onclick="calculate()" 
-            class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded w-full"
-        >
-            Calculate
-        </button>
-        <div id="result" class="mt-4 text-center text-green-500 text-lg font-semibold">Result:</div>
+    <div class="bg-white shadow-lg rounded-lg p-8 w-full max-w-4xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Left: Input Form -->
+            <div>
+                <h1 class="text-2xl font-bold text-gray-700 mb-6">Polymarket Profit Calculator</h1>
+                <label class="block text-gray-700 mb-1">Amount to Invest ($):</label>
+                <input 
+                    type="number" 
+                    id="amountToBuy" 
+                    class="border border-gray-300 rounded w-full py-2 px-3 mb-4 focus:outline-none focus:ring focus:border-blue-300" 
+                    placeholder="Enter amount" 
+                />
+                <label class="block text-gray-700 mb-1">Current Price of a Share (in cents):</label>
+                <input 
+                    type="number" 
+                    min="1" 
+                    max="100" 
+                    id="currentPrice" 
+                    class="border border-gray-300 rounded w-full py-2 px-3 mb-4 focus:outline-none focus:ring focus:border-blue-300" 
+                    placeholder="Enter current price (in cents)" 
+                />
+                <label class="block text-gray-700 mb-1">Selling Price of a Share (in cents):</label>
+                <input 
+                    type="number" 
+                    min="1" 
+                    max="100" 
+                    id="sellingPrice" 
+                    class="border border-gray-300 rounded w-full py-2 px-3 mb-4 focus:outline-none focus:ring focus:border-blue-300" 
+                    placeholder="Enter selling price (in cents)" 
+                />
+                <button 
+                    onclick="calculateProfit()" 
+                    class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded w-full"
+                >
+                    Calculate
+                </button>
+            </div>
+
+            <!-- Right: Result Card -->
+            <div class="flex flex-col items-center justify-center bg-gray-50 border border-gray-200 rounded-lg p-6">
+                <h2 class="text-xl font-semibold text-gray-700 mb-4">Calculation Result</h2>
+                <div id="result" class="w-full">
+                    <p class="text-gray-500 text-sm">Enter inputs to see the result.</p>
+                </div>
+            </div>
+        </div>
     </div>
+    <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 </html>
